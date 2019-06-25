@@ -4,6 +4,7 @@ import TextField from "@material-ui/core/TextField";
 import PropTypes from "prop-types";
 import NumberFormat from "react-number-format";
 import Button from "@material-ui/core/Button";
+import { makePost } from "./resources";
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -16,7 +17,7 @@ const useStyles = makeStyles(theme => ({
   },
   button: {
     margin: theme.spacing(1),
-    marginTop: theme.spacing(2),
+    marginTop: theme.spacing(2)
   }
 }));
 
@@ -66,7 +67,12 @@ export default function FormInput() {
           inputComponent: AmountFormatCustom
         }}
       />
-      <Button variant="contained" color="primary" className={classes.button} onClick={() => { console.log('sendFetch', {values} ); }}>
+      <Button
+        variant="contained"
+        color="primary"
+        className={classes.button}
+        onClick={async () => await makePost(values)}
+      >
         Enviar Pedido
       </Button>
     </form>
