@@ -47,7 +47,7 @@ export default function FormInput() {
       />
       <TextField
         id="discount"
-        label="Discount"
+        label="Descuento"
         className={classes.textField}
         value={values.discount}
         onChange={handleChange("discount")}
@@ -57,7 +57,7 @@ export default function FormInput() {
       />
       <TextField
         id="amount"
-        label="Amount"
+        label="Monto"
         className={classes.textField}
         value={values.amount}
         onChange={handleChange("amount")}
